@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Grocery List Generator</title>
+    <style>
+        body {
+            background-image: url('ImageForNews_746784_16829398207517011 copy.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        #resultContainer {
+            height: 24rem; /* Adjusted height for the result container */
+            overflow-y: auto; /* Adds a scrollbar if the content overflows */
+        }
+    </style>
+    <script type="module" src="stream-response.js"></script>
+</head>
+<body class="bg-white text-black min-h-screen flex items-center justify-center">
+    <div class="lg:w-2/3 2xl:w-1/2 p-8 rounded-md bg-gray-200"> <!-- Existing border radius here -->
+        <h1 class="text-3xl font-bold mb-6 text-center">Grocery List Generator</h1>
+        <form id="recipeForm" class="mb-4 space-y-4 rounded-lg"> <!-- Added border radius here -->
+            <textarea id="recipeInput" placeholder="Write recipe here:" class="input-field w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300" rows="4"></textarea>
+            <input type="number" id="amountOfPeople" placeholder="Number of People" required class="input-field w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300">
+            <button type="submit" class="w-full px-4 py-2 rounded-md bg-black text-white hover:bg-gray-700 focus:outline-none">Generate Recipe</button>
+        </form>
+        <div id="resultContainer" class="mt-4 p-4 border border-gray-300 rounded-md bg-gray-50">
+            <p id="generatedText" class="text-gray-500 text-sm">Generated Recipe will appear here.</p>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
