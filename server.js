@@ -5,7 +5,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 dotenv.config();
-console.log(process.env.OPENAI_API_KEY);
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -20,7 +19,7 @@ app.post("/generate-grocery-list", async (req, res) => {
     const { recipe, numberOfPeople } = req.body;
     const instructions =
       "You are a chef assisting with grocery planning. Provide a detailed grocery list.";
-    const customPrompt = `Based on the recipe: "${recipe}" for ${numberOfPeople} people, generate a detailed grocery list of the food ingredients, including quantities in grams. Always provide the grocery list in spanish`;
+    const customPrompt = `Based on the recipe: "${recipe}" for ${numberOfPeople} people, generate a detailed grocery list of the food ingredients only, including quantities in grams no household items .`;
 
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
