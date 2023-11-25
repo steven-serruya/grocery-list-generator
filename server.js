@@ -5,7 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 dotenv.config();
-
+console.log(process.env.OPENAI_API_KEY);
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
